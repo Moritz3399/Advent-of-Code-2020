@@ -5,7 +5,7 @@ import util.InputReader;
 public class Day3 {
 
     private Day3(String[] input, int[][] path) { // path {{right, down},...}
-        int result = 1;
+        long result = 1L;
         for (int[] ints : path) {
             result *= countTreesInPath(input, ints[0], ints[1]);
         }
@@ -35,7 +35,6 @@ public class Day3 {
 
         System.out.println("Part B");
         new Day3(input, new int[][]{{1,1},{3,1},{5,1},{7,1},{1,2}});
-        System.out.println("Not correct answer 2124702224 (by system)");
 
 //        System.out.println("Tests:");
 //        String[] testInput = {
