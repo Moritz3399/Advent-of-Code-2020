@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class InputReader {
     public static String[] getLinesOfFile(String path){
         ArrayList<String> lines = new ArrayList<>();
-
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(path)));
             String line;
