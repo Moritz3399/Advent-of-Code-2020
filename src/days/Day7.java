@@ -37,7 +37,6 @@ public class Day7 {
         }
     }
 
-
     private Bag[] parseRules(String[] rules) {
         ArrayList<Bag> bags = new ArrayList<>();
         for (String r : rules) bags.add(new Bag(r));
