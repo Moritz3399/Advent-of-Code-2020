@@ -6,8 +6,8 @@ public class Day11 {
 
     private SeatLayout[][] grid;
     private boolean changed = true;
-    private int tolerance;
-    private boolean onlyDirectNeighbours;
+    private final int tolerance;
+    private final boolean onlyDirectNeighbours;
 
     private Day11(String[] input, boolean onlyDirectNeighbours, int tolerance) {
         this.tolerance = tolerance;
@@ -22,7 +22,6 @@ public class Day11 {
         while (changed) {
             cnt++;
             changed = false;
-
 //            this.printGrid();
 
             for (int i = 0; i < grid.length; i++) {
@@ -107,17 +106,17 @@ public class Day11 {
         }
     }
 
-    private void printGrid() {
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                System.out.print(grid[i][j].toString());
-            }
-            System.out.print("\n");
-        }
-        System.out.print("\n\n");
-    }
+//    private void printGrid() {
+//        for (int i = 0; i < grid.length; i++) {
+//            for (int j = 0; j < grid[i].length; j++) {
+//                System.out.print(grid[i][j].toString());
+//            }
+//            System.out.print("\n");
+//        }
+//        System.out.print("\n\n");
+//    }
 
-    private class SeatLayout {
+    private static class SeatLayout {
 
         boolean isFloor = false;
         boolean emptySeat = false;
@@ -133,8 +132,7 @@ public class Day11 {
 
         boolean isOcupied() {
             if (isFloor) return false;
-            if (!emptySeat) return true;
-            return false;
+            return !emptySeat;
         }
 
         @Override
@@ -147,7 +145,6 @@ public class Day11 {
 
     public static void main(String[] args) {
         System.out.println("Day 11");
-
 //        new Day11(new String[]{"L.LL.LL.LL", "LLLLLLL.LL", "L.L.L..L..", "LLLL.LL.LL", "L.LL.LL.LL", "L.LLLLL.LL", "..L.L.....", "LLLLLLLLLL", "L.LLLLLL.L", "L.LLLLL.LL"},true,4);
 //        new Day11(new String[]{"L.LL.LL.LL", "LLLLLLL.LL", "L.L.L..L..", "LLLL.LL.LL", "L.LL.LL.LL", "L.LLLLL.LL", "..L.L.....", "LLLLLLLLLL", "L.LLLLLL.L", "L.LLLLL.LL"},false,5);
         System.out.println("Part A:");
