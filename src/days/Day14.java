@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class Day14 {
 
     private final Pattern patternMask = Pattern.compile("mask = ([X10]+)");
-    private final Pattern patternMemory = Pattern.compile("mem\\[([0-9]+)\\] = ([0-9]+)");
+    private final Pattern patternMemory = Pattern.compile("mem\\[([0-9]+)] = ([0-9]+)");
     private final HashMap<Long, Long> memory = new HashMap<>();
 
     private Day14(String[] input, boolean isV2) {
@@ -25,9 +25,9 @@ public class Day14 {
     }
 
     private void initMemory(String[] program) {
-        String mask = "";
-        Long maskReplaceWithOne = 0L;
-        Long maskReplaceWithZero = 0L;
+        String mask;
+        long maskReplaceWithOne = 0L;
+        long maskReplaceWithZero = 0L;
         for (String command : program) {
             Matcher matcherMask = patternMask.matcher(command);
             if (matcherMask.find()) {
